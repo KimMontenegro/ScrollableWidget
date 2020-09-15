@@ -46,13 +46,16 @@ class _MyAppState extends State<MyApp> {
             DraggableScrollableSheet(
               builder: (context, scrollController){
                 return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+                    color: Colors.white,
+                  ),
                   child: ListView.builder(
+                    controller: scrollController,
                     itemCount: places.length,
                     itemBuilder: (BuildContext context, index){
                       return ListTile(
-                        title: Text(
-                          places[index]
-                        )
+                        title: Text(places[index]),
                       );
                     }
                   )
